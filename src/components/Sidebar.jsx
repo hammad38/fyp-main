@@ -1,78 +1,102 @@
-import Button from "./Button";
-import Heading from "./Heading";
-import Section from "./Section";
-import Tagline from "./Tagline";
-import { roadmap } from "../constants";
-import { check2, grid, loading1 } from "../assets";
-import { Gradient } from "./design/Roadmap";
+import { MoreVertical, ChevronLast, ChevronFirst } from "lucide-react";
+import { useContext, createContext, useState } from "react";
 
-const Sidebar = () => (
-  <Section className="overflow-hidden" id="roadmap">
-    <div className="container md:pb-10">
-      <Heading tag="Ready to get started" title="What we’re working on" />
+const SidebarContext = createContext();
 
-      <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]">
-        {roadmap.map((item) => {
-          const status = item.status === "done" ? "Done" : "In progress";
+export default function Sidebar({ children }) {
+  const [expanded, setExpanded] = useState(true);
 
-          return (
-            <div
-              className={`md:flex even:md:translate-y-[7rem] p-0.25 rounded-[2.5rem] ${
-                item.colorful ? "bg-conic-gradient" : "bg-n-6"
-              }`}
-              key={item.id}
-            >
-              <div className="relative p-8 bg-n-8 rounded-[2.4375rem] overflow-hidden xl:p-15">
-                <div className="absolute top-0 left-0 max-w-full">
-                  <img
-                    className="w-full"
-                    src={grid}
-                    width={550}
-                    height={550}
-                    alt="Grid"
-                  />
-                </div>
-                <div className="relative z-1">
-                  <div className="flex items-center justify-between max-w-[27rem] mb-8 md:mb-20">
-                    <Tagline>{item.date}</Tagline>
+  return (
+    <aside className="h-screen">
+      <nav className="h-full flex flex-col bg-white border-r shadow-sm">
+        <div className="p-4 pb-2 flex justify-between items-center">
+          <img
+            src="https://img.logoipsum.com/243.svg"
+            className={`overflow-hidden transition-all ${
+              expanded ? "w-32" : "w-0"
+            }`}
+            alt=""
+          />
+          <button
+            onClick={() => setExpanded((curr) => !curr)}
+            className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100"
+          >
+            {expanded ? <ChevronFirst /> : <ChevronLast />}
+          </button>
+        </div>
 
-                    <div className="flex items-center px-4 py-1 bg-n-1 rounded text-n-8">
-                      <img
-                        className="mr-2.5"
-                        src={item.status === "done" ? check2 : loading1}
-                        width={16}
-                        height={16}
-                        alt={status}
-                      />
-                      <div className="tagline">{status}</div>
-                    </div>
-                  </div>
+        <SidebarContext.Provider value={{ expanded }}>
+          <ul className="flex-1 px-3">{children}</ul>
+        </SidebarContext.Provider>
 
-                  <div className="mb-10 -my-10 -mx-15">
-                    <img
-                      className="w-full"
-                      src={item.imageUrl}
-                      width={628}
-                      height={426}
-                      alt={item.title}
-                    />
-                  </div>
-                  <h4 className="h4 mb-4">{item.title}</h4>
-                  <p className="body-2 text-n-4">{item.text}</p>
-                </div>
-              </div>
+        <div className="border-t flex p-3">
+          <img
+            src="https://ui-avatars.com/api/?background=c7d2fe&color=3730a3&bold=true"
+            alt=""
+            className="w-10 h-10 rounded-md"
+          />
+          <div
+            className={`
+              flex justify-between items-center
+              overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"}
+          `}
+          >
+            <div className="leading-4">
+              <h4 className="font-semibold">John Doe</h4>
+              <span className="text-xs text-gray-600">johndoe@gmail.com</span>
             </div>
-          );
-        })}
+            <MoreVertical size={20} />
+          </div>
+        </div>
+      </nav>
+    </aside>
+  );
+}
 
-        <Gradient />
-      </div>
+export function SidebarItem({ icon, text, active, alert }) {
+  const { expanded } = useContext(SidebarContext);
 
-      <div className="flex justify-center mt-12 md:mt-15 xl:mt-20">
-        <Button href="/roadmap">Our roadmap</Button>
-      </div>
-    </div>
-  </Section>
-);
+  return (
+    <li
+      className={`
+        relative flex items-center py-2 px-3 my-1
+        font-medium rounded-md cursor-pointer
+        transition-colors group
+        ${
+          active
+            ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
+            : "hover:bg-indigo-50 text-gray-600"
+        }
+    `}
+    >
+      {icon}
+      <span
+        className={`overflow-hidden transition-all ${
+          expanded ? "w-52 ml-3" : "w-0"
+        }`}
+      >
+        {text}
+      </span>
+      {alert && (
+        <div
+          className={`absolute right-2 w-2 h-2 rounded bg-indigo-400 ${
+            expanded ? "" : "top-2"
+          }`}
+        />
+      )}
 
-export default Sidebar;
+      {!expanded && (
+        <div
+          className={`
+          absolute left-full rounded-md px-2 py-1 ml-6
+          bg-indigo-100 text-indigo-800 text-sm
+          invisible opacity-20 -translate-x-3 transition-all
+          group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
+      `}
+        >
+          {text}
+        </div>
+      )}
+    </li>
+  );
+}
