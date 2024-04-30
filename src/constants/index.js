@@ -84,9 +84,10 @@ export const notificationImages = [notification4, notification3, notification2];
 export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
 
 export const brainwaveServices = [
-  "Photo generating",
-  "Photo enhance",
-  "Seamless Integration",
+  "Collection of 30+ screens",
+  "150+ hand-crafted widgets",
+  "No external libraries",
+  "100% flexible"
 ];
 
 export const brainwaveServicesIcons = [
@@ -134,21 +135,21 @@ export const roadmap = [
 ];
 
 export const collabText =
-  "With smart automation and top-notch security, it's the perfect solution for teams looking to work smarter.";
+  "Widget World: Fast-track Development with Smart Automation for Enhanced Team Collaboration.";
 
 export const collabContent = [
   {
     id: "0",
-    title: "Seamless Integration",
+    title: "Rapid Development",
     text: collabText,
   },
   {
     id: "1",
-    title: "Smart Automation",
+    title: "High Performance",
   },
   {
     id: "2",
-    title: "Top-notch Security",
+    title: "Automated Workflows",
   },
 ];
 
