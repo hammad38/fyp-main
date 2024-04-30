@@ -1,4 +1,5 @@
 import brainwave from "./brainwave.svg";
+import logo from "./widgetworld.png"
 import check from "./check.svg";
 import brainwaveSymbol from "./brainwave-symbol.svg";
 import brainwaveWhiteSymbol from "./brainwave-symbol-white.svg";
@@ -24,6 +25,9 @@ import background from "./background.jpg";
 import curve from "./hero/curve.png";
 import robot from "./hero/robot.jpg";
 import heroBackground from "./hero/hero-background.jpg";
+import banner from "./hero/banner.jpg";
+import bubblemockup from "./hero/mockupBubbles.jpg"
+
 
 import curve1 from "./collaboration/curve-1.svg";
 import curve2 from "./collaboration/curve-2.svg";
@@ -39,6 +43,9 @@ import slack from "./collaboration/slack.png";
 import service1 from "./services/service-1.png";
 import service2 from "./services/service-2.png";
 import service3 from "./services/service-3.png";
+import service4 from "./services/service-4.png";
+import service5 from "./services/service-5.png";
+
 
 import lines from "./pricing/lines.svg";
 import stars from "./pricing/stars.svg";
@@ -76,6 +83,9 @@ import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
 
 export {
+  logo,
+  banner,
+  bubblemockup,
   brainwave,
   check,
   check2,
@@ -114,6 +124,8 @@ export {
   service1,
   service2,
   service3,
+  service4,
+  service5,
   lines,
   stars,
   coins,
