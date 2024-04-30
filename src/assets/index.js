@@ -1,5 +1,5 @@
 import brainwave from "./brainwave.svg";
-import logo from "./widgetworld.png"
+import logo1 from "./logo.png"
 import check from "./check.svg";
 import brainwaveSymbol from "./brainwave-symbol.svg";
 import brainwaveWhiteSymbol from "./brainwave-symbol-white.svg";
@@ -46,7 +46,6 @@ import service3 from "./services/service-3.jpg";
 import service4 from "./services/service-4.png";
 import service5 from "./services/service-5.png";
 
-
 import lines from "./pricing/lines.svg";
 import stars from "./pricing/stars.svg";
 
@@ -83,7 +82,7 @@ import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
 
 export {
-  logo,
+  logo1,
   banner,
   bubblemockup,
   brainwave,
