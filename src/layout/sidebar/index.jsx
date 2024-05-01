@@ -109,14 +109,13 @@ const Sidebar = () => {
               <small className="pl-3 text-black	inline-block mb-2 font-bold text-lg">
                 Widgets
               </small>
-              <NavLink to={"/xxx"} className="link flex items-center pl-5">
-                {/* <AiOutlineAppstore size={23} className="min-w-max mr-3" /> */}
+              <NavLink to={"button"} className="link flex items-center pl-5">
                 <span>Button</span>
               </NavLink>
             </li>
             <li>
               <NavLink
-                to={"/authentication"}
+                to={"card"}
                 className="link flex items-center pl-5"
               >
                 {/* <BsPerson size={23} className="min-w-max mr-2" /> */}
@@ -125,7 +124,7 @@ const Sidebar = () => {
             </li>
             <li>
               <NavLink
-                to={"/authentication"}
+                to={"carousel"}
                 className="link flex items-center pl-5"
               >
                 {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
@@ -133,31 +132,31 @@ const Sidebar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to={"/storage"} className="link flex items-center pl-5">
+              <NavLink to={"dateTime-Picker"} className="link flex items-center pl-5">
                 {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
                 <span>DateTime Picker</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"/storage"} className="link flex items-center pl-5">
+              <NavLink to={"dialog"} className="link flex items-center pl-5">
                 {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
-                <span>Dialoig</span>
+                <span>Dialog</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"/storage"} className="link flex items-center pl-5">
+              <NavLink to={"drawer"} className="link flex items-center pl-5">
                 {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
                 <span>Drawer</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"/storage"} className="link flex items-center pl-5">
+              <NavLink to={"dropdown-menu"} className="link flex items-center pl-5">
                 {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
                 <span>Dropdown Menu</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"/storage"} className="link flex items-center pl-5">
+              <NavLink to={"gradient"} className="link flex items-center pl-5">
                 {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
                 <span>Gradient</span>
               </NavLink>

@@ -1,23 +1,24 @@
 import { Route, Routes } from "react-router-dom";
 import RootLayout from "../layout/RootLayout";
 import AllApps from "./AllApps";
-import Analytics from "./Analytics";
-import Authentication from "./Authentication";
+import Carousel from "./Carousel";
+import Card from "./Card";
 import Build from "./Build";
 import Settings from "./Settings";
-// import Stroage from "./Stroage";
-import Stroage from "./Homepage"
 
 const Sidebar = () => {
   return (
     <RootLayout>
       <Routes>
-        <Route path="/xxx" element={<AllApps />} />
-        <Route path="/authentication" element={<Authentication />} />
-        <Route path="/stroage" element={<Stroage />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/build/:bID" element={<Build />} />
-        <Route path="/analytics/:aID" element={<Analytics />} />
+        <Route path="button" element={<AllApps />} />
+        <Route path="card" element={<AllApps />} />
+        <Route path="carousel" element={<AllApps />} />
+        <Route path="dateTime-Picker" element={<AllApps />} />
+        <Route path="dialog" element={<AllApps />} />
+        <Route path="drawer" element={<AllApps />} />
+        <Route path="dropdown-menu" element={<AllApps />} />
+        <Route path="gradient" element={<AllApps />} />
+
       </Routes>
     </RootLayout>
   );

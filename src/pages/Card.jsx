@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { nord } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { hopscotch } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
 
@@ -88,7 +88,7 @@ const CodeEditor = () => {
             >
               <SyntaxHighlighter
                 language="dart"
-                style={{ ...nord, fontSize: "14px", padding: "10px" }}
+                style={{ ...hopscotch, fontSize: "14px", padding: "10px" }}
                 showLineNumbers
                 wrapLines
               >
