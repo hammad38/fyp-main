@@ -12,6 +12,8 @@ import { RiBuilding3Line } from "react-icons/ri";
 import { useMediaQuery } from "react-responsive";
 import { MdMenu } from "react-icons/md";
 import { NavLink, useLocation } from "react-router-dom";
+import {logo1} from "../../assets/"
+
 
 const Sidebar = () => {
   let isTabletMid = useMediaQuery({ query: "(max-width: 768px)" });
@@ -94,11 +96,11 @@ const Sidebar = () => {
       >
         <div className="flex items-center gap-2.5 font-medium border-b py-3 border-slate-300 mx-3">
           <img
-            src="https://img.icons8.com/color/512/firebase.png"
+            src={logo1}
             width={45}
             alt=""
           />
-          <span className="text-xl whitespace-pre">Fireball</span>
+          <span className="text-xl whitespace-pre">Widget World</span>
         </div>
 
         <div className="flex flex-col h-full">
@@ -107,7 +109,7 @@ const Sidebar = () => {
               <small className="pl-3 text-black	inline-block mb-2 font-bold text-lg">
                 Widgets
               </small>
-              <NavLink to={"/"} className="link flex items-center pl-5">
+              <NavLink to={"/button"} className="link flex items-center pl-5">
                 {/* <AiOutlineAppstore size={23} className="min-w-max mr-3" /> */}
                 <span>Button</span>
               </NavLink>
