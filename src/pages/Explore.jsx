@@ -5,7 +5,10 @@ const Explore = () => {
   return (
     <>
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-        <Sidebar />
+        <NavLink to={"/"} className="link flex items-center pl-5">
+          <Sidebar />
+        </NavLink>
+
       </div>
       <ButtonGradient />
     </>

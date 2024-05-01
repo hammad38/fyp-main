@@ -12,7 +12,7 @@ const Sidebar = () => {
   return (
     <RootLayout>
       <Routes>
-        <Route path="/button" element={<AllApps />} />
+        <Route path="/xxx" element={<AllApps />} />
         <Route path="/authentication" element={<Authentication />} />
         <Route path="/stroage" element={<Stroage />} />
         <Route path="/settings" element={<Settings />} />

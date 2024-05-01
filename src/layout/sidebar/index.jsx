@@ -94,10 +94,10 @@ const Sidebar = () => {
         animate={open ? "open" : "closed"}
         className="bg-white text-black shadow-xl z-[999] max-w-[16rem] w-[16rem] overflow-hidden md:relative fixed h-screen"
       >
-        <div className="flex items-center gap-2.5 font-medium border-b py-3 border-slate-300 mx-3">
+        <div className="flex items-center gap-0.1 font-medium border-b py-3 border-slate-300 mx-3">
           <img
             src={logo1}
-            width={45}
+            width={90}
             alt=""
           />
           <span className="text-xl whitespace-pre">Widget World</span>
@@ -109,7 +109,7 @@ const Sidebar = () => {
               <small className="pl-3 text-black	inline-block mb-2 font-bold text-lg">
                 Widgets
               </small>
-              <NavLink to={"/button"} className="link flex items-center pl-5">
+              <NavLink to={"/xxx"} className="link flex items-center pl-5">
                 {/* <AiOutlineAppstore size={23} className="min-w-max mr-3" /> */}
                 <span>Button</span>
               </NavLink>

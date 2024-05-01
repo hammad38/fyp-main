@@ -12,11 +12,8 @@ const App = () => {
 
 
         <Routes>
-
           <Route path="/" element={<Home />} />
           <Route path="/Explore" element={<Sidebar />} />
-
-
         </Routes>
       </div>
     </>
