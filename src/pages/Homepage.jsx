@@ -20,7 +20,6 @@ const Homepage = () => {
         <Services />
         <Pricing />
         <Roadmap />
-        {/* <Sidebar /> */}
         <Footer />
       </div>
 

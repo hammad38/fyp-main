@@ -12,7 +12,7 @@ import { RiBuilding3Line } from "react-icons/ri";
 import { useMediaQuery } from "react-responsive";
 import { MdMenu } from "react-icons/md";
 import { NavLink, useLocation } from "react-router-dom";
-import {logo1} from "../../assets/"
+import { logo1 } from "../../assets/"
 
 
 const Sidebar = () => {
@@ -35,36 +35,36 @@ const Sidebar = () => {
 
   const Nav_animation = isTabletMid
     ? {
-        open: {
-          x: 0,
-          width: "16rem",
-          transition: {
-            damping: 40,
-          },
+      open: {
+        x: 0,
+        width: "16rem",
+        transition: {
+          damping: 40,
         },
-        closed: {
-          x: -250,
-          width: 0,
-          transition: {
-            damping: 40,
-            delay: 0.15,
-          },
+      },
+      closed: {
+        x: -250,
+        width: 0,
+        transition: {
+          damping: 40,
+          delay: 0.15,
         },
-      }
+      },
+    }
     : {
-        open: {
-          width: "16rem",
-          transition: {
-            damping: 40,
-          },
+      open: {
+        width: "16rem",
+        transition: {
+          damping: 40,
         },
-        closed: {
-          width: "4rem",
-          transition: {
-            damping: 40,
-          },
+      },
+      closed: {
+        width: "4rem",
+        transition: {
+          damping: 40,
         },
-      };
+      },
+    };
 
   const subMenusList = [
     {
@@ -83,9 +83,8 @@ const Sidebar = () => {
     <div>
       <div
         onClick={() => setOpen(false)}
-        className={`md:hidden fixed inset-0 max-h-screen z-[998] bg-black/50 ${
-          open ? "block" : "hidden"
-        } `}
+        className={`md:hidden fixed inset-0 max-h-screen z-[998] bg-black/50 ${open ? "block" : "hidden"
+          } `}
       ></div>
       <motion.div
         ref={sidebarRef}
@@ -95,16 +94,18 @@ const Sidebar = () => {
         className="bg-white text-black shadow-xl z-[999] max-w-[16rem] w-[16rem] overflow-hidden md:relative fixed h-screen"
       >
         <div className="flex items-center gap-0.1 font-medium border-b py-3 border-slate-300 mx-3">
-          <img
-            src={logo1}
-            width={90}
-            alt=""
-          />
-          <span className="text-xl whitespace-pre">Widget World</span>
+          <NavLink to={"/"} className="link flex items-center pl-5">
+            <img
+              src={logo1}
+              width={50}
+              alt=""
+            />
+            <span className="text-xl whitespace-pre pl-3">Widget World</span>
+          </NavLink>
         </div>
 
-        <div className="flex flex-col h-full">
-          <ul className="whitespace-pre px-2.5 text-[0.9rem] py-5 flex flex-col gap-4 font-medium overflow-x-hidden scrollbar-thin scrollbar-track-white scrollbar-thumb-slate-100 md:h-[68%] h-[70%]">
+        <div className="flex flex-col h-full ">
+          <ul className="whitespace-pre px-2.5 text-[0.9rem] py-5 flex flex-col gap-4 font-medium overflow-x-hidden scrollbar-thin scrollbar-track-white scrollbar-thumb-slate-100 md:h-[90%] h-[70%] overflow-y-auto">
             <li>
               <small className="pl-3 text-black	inline-block mb-2 font-bold text-lg">
                 Widgets
@@ -161,62 +162,65 @@ const Sidebar = () => {
                 <span>Gradient</span>
               </NavLink>
             </li>
-
-            {/* {(open || isTabletMid) && (
-              <div className="border-y py-5 border-slate-300">
-                <small className="pl-3 text-slate-500 inline-block mb-2">
-                  Product categories
-                </small>
-                {subMenusList?.map((menu) => (
-                  <div key={menu.name} className="flex flex-col gap-2">
-                    <SubMenu data={menu} />
-                  </div>
-                ))}
-              </div>
-            )} */}
-            {/* <li>
-              <NavLink to={"/settings"} className="link flex items-center">
-                <SlSettings size={23} className="min-w-max mr-2" />
-                <span>Settings</span>
+            <li>
+              <small className="pl-3 text-black	inline-block mb-2 font-bold text-lg">
+                Screens
+              </small>
+              <NavLink to={"crypto-ui"} className="link flex items-center pl-5">
+                <span>Crypto UI</span>
               </NavLink>
-            </li> */}
+            </li>
+            <li>
+              <NavLink
+                to={"e-commerce-ui"}
+                className="link flex items-center pl-5"
+              >
+                {/* <BsPerson size={23} className="min-w-max mr-2" /> */}
+                <span>E-commerce UI</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to={"food-ui"}
+                className="link flex items-center pl-5"
+              >
+                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+                <span>Food UI</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"gamefied-ui"} className="link flex items-center pl-5">
+                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+                <span>Gamefied UI</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"mics"} className="link flex items-center pl-5">
+                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+                <span>Misc</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"nft-1"} className="link flex items-center pl-5">
+                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+                <span>NFT 1</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"resolution-app"} className="link flex items-center pl-5">
+                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+                <span>Resolution App</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"online-course"} className="link flex items-center pl-5">
+                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+                <span>Online Course UI</span>
+              </NavLink>
+            </li>
           </ul>
-          {/* {open && (
-            <div className="flex-1 text-sm z-50 max-h-48 my-auto whitespace-pre w-full font-medium">
-              <div className="flex border-y border-slate-300 p-4 items-center justify-between">
-                <div>
-                  <p>Spark</p>
-                  <small>No-cost $0/month</small>
-                </div>
-                <p className="text-teal-500 py-1.5 px-3 text-xs bg-teal-50 rounded-xl">
-                  Upgrade
-                </p>
-              </div>
-            </div>
-          )} */}
         </div>
-        {/* <motion.div
-          onClick={() => {
-            setOpen(!open);
-          }}
-          animate={
-            open
-              ? {
-                  x: 0,
-                  y: 0,
-                  rotate: 0,
-                }
-              : {
-                  x: -10,
-                  y: -200,
-                  rotate: 180,
-                }
-          }
-          transition={{ duration: 0 }}
-          className="absolute w-fit h-fit md:block z-50 hidden right-2 bottom-3 cursor-pointer"
-        >
-          <IoIosArrowBack size={25} />
-        </motion.div> */}
+
       </motion.div>
       <div className="m-3 md:hidden" onClick={() => setOpen(true)}>
         <MdMenu size={25} />

@@ -8,9 +8,10 @@ import Settings from "./Settings";
 
 const Sidebar = () => {
   return (
+    
     <RootLayout>
       <Routes>
-        <Route path="button" element={<AllApps />} />
+        <Route path="/" element={<AllApps />} />
         <Route path="card" element={<AllApps />} />
         <Route path="carousel" element={<AllApps />} />
         <Route path="dateTime-Picker" element={<AllApps />} />

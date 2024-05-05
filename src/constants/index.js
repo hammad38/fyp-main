@@ -216,12 +216,12 @@ export const pricing = [
   {
     id: "0",
     title: "Basic",
-    description: "AI chatbot, personalized recommendations",
+    description: "Access to free widgets.",
     price: "0",
     features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
+      "Free Widgets",
+      "Design Styles",
+      "Unlimited brick's storage"
     ],
   },
   {
