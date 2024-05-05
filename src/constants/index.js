@@ -219,31 +219,31 @@ export const pricing = [
     description: "Access to free widgets.",
     price: "0",
     features: [
-      "Free Widgets",
-      "Design Styles",
-      "Unlimited brick's storage"
+      "Widget Freedom: Access Free Tools for Your Needs",
+      "Explore Diverse Design Styles for Creative Expression",
+      "Unlimited Storage for Your Digital Assets"
     ],
   },
   {
     id: "1",
     title: "Premium",
-    description: "Advanced AI chatbot, priority support, analytics dashboard",
+    description: "Advanced UI's, priority support, analytics dashboard",
     price: "9.99",
     features: [
-      "An advanced AI chatbot that can understand complex queries",
-      "An analytics dashboard to track your conversations",
+      "An advanced UI that can build complex Apps",
+      "A User dashboard to manage your templates",
       "Priority support to solve issues quickly",
     ],
   },
   {
     id: "2",
     title: "Enterprise",
-    description: "Custom AI chatbot, advanced analytics, dedicated account",
+    description: "Custom UI Pages, advanced analytics, dedicated account",
     price: null,
     features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
+      "An AI-Powered Widget Assistant for Seamless Queries",
+      "Personalized Widget Recommendations Tailored to Your Preferences",
+      "Explore Widget Functionality and Features",
     ],
   },
 ];
