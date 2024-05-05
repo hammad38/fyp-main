@@ -94,7 +94,7 @@ const Sidebar = () => {
         className="bg-white text-black shadow-xl z-[999] max-w-[16rem] w-[16rem] overflow-hidden md:relative fixed h-screen"
       >
         <div className="flex items-center gap-0.1 font-medium border-b py-3 border-slate-300 mx-3">
-          <NavLink to={"/"} className="link flex items-center pl-5">
+          <NavLink to={"/"} className="link flex items-center pl-3">
             <img
               src={logo1}
               width={50}
