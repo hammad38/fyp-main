@@ -195,7 +195,7 @@ const Sidebar = () => {
             <li>
               <NavLink to={"quiz"} className="link flex items-center pl-5">
                 {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
-                <span>Quiz</span>
+                <span>Quiz UI</span>
               </NavLink>
             </li>
             <li>
