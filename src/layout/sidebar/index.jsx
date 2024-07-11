@@ -110,8 +110,8 @@ const Sidebar = () => {
               <small className="pl-3 text-black	inline-block mb-2 font-bold text-lg">
                 Widgets
               </small>
-              <NavLink to={"button"} className="link flex items-center pl-5">
-                <span>Button</span>
+              <NavLink to={"appbar"} className="link flex items-center pl-5">
+                <span>Appbar</span>
               </NavLink>
             </li>
             <li>
@@ -166,17 +166,9 @@ const Sidebar = () => {
               <small className="pl-3 text-black	inline-block mb-2 font-bold text-lg">
                 Screens
               </small>
+              
               <NavLink to={"crypto-ui"} className="link flex items-center pl-5">
                 <span>Crypto UI</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to={"e-commerce-ui"}
-                className="link flex items-center pl-5"
-              >
-                {/* <BsPerson size={23} className="min-w-max mr-2" /> */}
-                <span>E-commerce UI</span>
               </NavLink>
             </li>
             <li>
@@ -189,23 +181,33 @@ const Sidebar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to={"gamefied-ui"} className="link flex items-center pl-5">
+              <NavLink to={"covid-ui"} className="link flex items-center pl-5">
                 {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
-                <span>Gamefied UI</span>
+                <span>Covid UI</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"mics"} className="link flex items-center pl-5">
+              <NavLink to={"calculator"} className="link flex items-center pl-5">
                 {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
-                <span>Misc</span>
+                <span>Calculator UI</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"nft-1"} className="link flex items-center pl-5">
+              <NavLink to={"quiz"} className="link flex items-center pl-5">
                 {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
-                <span>NFT 1</span>
+                <span>Quiz</span>
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to={"e-commerce-ui"}
+                className="link flex items-center pl-5"
+              >
+                {/* <BsPerson size={23} className="min-w-max mr-2" /> */}
+                <span>E-commerce UI</span>
+              </NavLink>
+            </li>
+            
             <li>
               <NavLink to={"resolution-app"} className="link flex items-center pl-5">
                 {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}

@@ -3,6 +3,14 @@ import RootLayout from "../layout/RootLayout";
 import AllApps from "./AllApps";
 import Carousel from "./Carousel";
 import Card from "./Card";
+import Food from "./Food";
+import Covid from "./Covid";
+import Calculator from "./Calculator";
+import Quiz from "./Quiz";
+import Crypto from "./Crypto";
+import Datetimepicker from './Datetimepicker'
+
+
 import Build from "./Build";
 import Settings from "./Settings";
 
@@ -11,19 +19,19 @@ const Sidebar = () => {
     
     <RootLayout>
       <Routes>
-        <Route path="/" element={<AllApps />} />
-        <Route path="card" element={<AllApps />} />
-        <Route path="carousel" element={<AllApps />} />
-        <Route path="dateTime-Picker" element={<AllApps />} />
+        <Route path="appbar" element={<AllApps />} />
+        <Route path="card" element={<Card />} />
+        <Route path="carousel" element={<Carousel />} />
+        <Route path="dateTime-Picker" element={<Datetimepicker />} />
         <Route path="dialog" element={<AllApps />} />
         <Route path="drawer" element={<AllApps />} />
         <Route path="dropdown-menu" element={<AllApps />} />
-        <Route path="crypto-ui" element={<AllApps />} />
+        <Route path="crypto-ui" element={<Crypto />} />
         <Route path="e-commerce-ui" element={<AllApps />} />
-        <Route path="food-ui" element={<AllApps />} />
-        <Route path="gamefied-ui" element={<AllApps />} />
-        <Route path="mics" element={<AllApps />} />
-        <Route path="nft-1" element={<AllApps />} />
+        <Route path="food-ui" element={<Food />} />
+        <Route path="covid-ui" element={<Covid />} />
+        <Route path="calculator" element={<Calculator />} />
+        <Route path="quiz" element={<Quiz />} />
         <Route path="resolution-app" element={<AllApps />} />
         <Route path="online-course" element={<AllApps />} />
       </Routes>

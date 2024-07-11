@@ -3,12 +3,12 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { hopscotch } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
-
+import card10 from '../assets/screenshots/card10.png';
 const ImageComponent = () => {
   return (
     <div className="flex justify-center items-center h-full">
       <img
-        src="https://firebasestorage.googleapis.com/v0/b/flutterbricks-1926c.appspot.com/o/images%2Fwidgets%2F1637583507300%2Flikebuttonpic.png?alt=media&token=cfffa4e0-907c-4835-a66d-9f6d0e99cfdc"
+        src={card10}
         alt="Placeholder Image"
         className="rounded-md"
       />
@@ -20,35 +20,81 @@ const CodeEditor = () => {
   const [copied, setCopied] = useState(false);
 
   const code = `
-    class ThumbsUpButton extends StatefulWidget {
-      const ThumbsUpButton(
-          {Key? key, required this.onPressed, this.color = Colors.black})
-          : super(key: key);
-      final Function onPressed;
-      final Color color;
-      @override
-      _ThumbsUpButtonState createState() => _ThumbsUpButtonState();
-    }
-    
-    class _ThumbsUpButtonState extends State<ThumbsUpButton> {
-      bool isLiked = false;
-    
-      @override
-      Widget build(BuildContext context) {
-        return Container(
-            child: IconButton(
-          icon: Icon(isLiked ? Icons.thumb_up_alt : Icons.thumb_up_alt_outlined,
-              color: widget.color),
-          onPressed: () {
-            setState(() {
-              isLiked = !isLiked;
-            });
-            widget.onPressed();
-          },
-        ));
-      }
-    }
-  `.trim();
+import 'package:flutter/material.dart';
+
+class Card1 extends StatelessWidget {
+  final String text;
+  final String imageUrl;
+  final String subtitle;
+  final Function() onPressed;
+
+  const Card1(
+      {required this.text,
+      required this.imageUrl,
+      required this.subtitle,
+      required this.onPressed,
+      Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        height: 75,
+        padding: const EdgeInsets.all(15.0),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12.5),
+          boxShadow: [
+            BoxShadow(
+              offset: const Offset(10, 20),
+              blurRadius: 10,
+              spreadRadius: 0,
+              color: Colors.grey.withOpacity(
+                .05,
+              ),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            ClipOval(
+              child: Image.network(
+                imageUrl,
+                height: 60,
+                width: 60,
+                fit: BoxFit.cover,
+              ),
+            ),
+            const SizedBox(width: 15),
+            Text(
+              text,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+            const Spacer(),
+            Text(
+              subtitle,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.grey,
+                fontWeight: FontWeight.normal,
+                fontSize: 12,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+    `.trim();
 
   const handleCopy = () => {
     setCopied(true);
@@ -59,7 +105,7 @@ const CodeEditor = () => {
     <div className="flex flex-col items-center p-8 rounded-lg shadow-lg">
       <div className="mb-4 w-full">
         <span className="block mb-2">Button</span>
-        <h1 className="text-2xl font-bold block">Like Button Thumbs Up</h1>
+        <h1 className="text-2xl font-bold block">Like fdfsButton Thumbs Up</h1>
       </div>
 
       <div className="flex flex-col md:flex-row justify-between w-full">
@@ -74,7 +120,7 @@ const CodeEditor = () => {
               </div>
             )}
             <div className="flex justify-between items-center mb-2">
-              <span className="text-gray-600">Like Button Thumbs Up</span>
+              <span className="text-gray-600">Like dfdsButton Thumbs Up</span>
               <CopyToClipboard text={code} onCopy={handleCopy}>
                 <button className="flex items-center space-x-1 bg-black-300 px-2 py-1 rounded text-white hover:bg-gray-400 focus:outline-none">
                   <FiCopy />

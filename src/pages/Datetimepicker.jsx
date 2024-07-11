@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { nord } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { hopscotch } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
-import appbar from "../assets/screenshots/appbar1.png";
+import Datetimepicker from '../assets/screenshots/datetime.png';
 
 const ImageComponent = () => {
   return (
     <div className="flex justify-center items-center h-full">
       <img
-        src={appbar}
+        src={Datetimepicker}
         alt="Placeholder Image"
         className="rounded-md"
       />
@@ -21,47 +21,26 @@ const CodeEditor = () => {
   const [copied, setCopied] = useState(false);
 
   const code = `
-   import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-class AppBar1 extends StatelessWidget {
-  final Size preferredSize;
+class DatePicker1 extends StatelessWidget {
+  const DatePicker1({super.key});
 
-  const AppBar1({Key? key})
-      : preferredSize = const Size.fromHeight(56.0),
-        super(key: key);
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      centerTitle: true,
-      title: const Text(
-        "Widget Worlds",
-        style: TextStyle(
-          color: Colors.white,
-        ),
-      ),
-      backgroundColor: const Color(0xff4338CA),
-      actions: [
-        IconButton(
-          icon: const Icon(
-            Icons.share,
-            color: Color(0xffffffff),
-          ),
-          onPressed: () {},
-        )
-      ],
-      leading: IconButton(
-        icon: const Icon(
-          Icons.keyboard_arrow_left,
-          color: Color(0xffffffff),
-        ),
-        onPressed: () {
-          
-        },
-      ),
+    return GestureDetector(
+      onTap: () async {
+        final DateTimeRange? newDate = await showDateRangePicker(
+          context: context,
+          firstDate: DateTime(2000),
+          lastDate: DateTime(2101),
+          helpText: 'Select a date',
+        );
+      },
+      child: const Text("Date Picker 1"),
     );
   }
-}
-  `.trim();
+}    `.trim();
 
   const handleCopy = () => {
     setCopied(true);
@@ -71,8 +50,8 @@ class AppBar1 extends StatelessWidget {
   return (
     <div className="flex flex-col items-center p-8 rounded-lg shadow-lg">
       <div className="mb-4 w-full">
-        <span className="block mb-2">Appbar</span>
-        <h1 className="text-2xl font-bold block">Appbar Compnent</h1>
+        <span className="block mb-2">Button</span>
+        <h1 className="text-2xl font-bold block">Like fdfsButton Thumbs Up</h1>
       </div>
 
       <div className="flex flex-col md:flex-row justify-between w-full">
@@ -87,7 +66,7 @@ class AppBar1 extends StatelessWidget {
               </div>
             )}
             <div className="flex justify-between items-center mb-2">
-              <span className="text-gray-600">Appbar Compnent</span>
+              <span className="text-gray-600">Like dfdsButton Thumbs Up</span>
               <CopyToClipboard text={code} onCopy={handleCopy}>
                 <button className="flex items-center space-x-1 bg-black-300 px-2 py-1 rounded text-white hover:bg-gray-400 focus:outline-none">
                   <FiCopy />
@@ -101,7 +80,7 @@ class AppBar1 extends StatelessWidget {
             >
               <SyntaxHighlighter
                 language="dart"
-                style={{ ...nord, fontSize: "14px", padding: "10px" }}
+                style={{ ...hopscotch, fontSize: "14px", padding: "10px" }}
                 showLineNumbers
                 wrapLines
               >
