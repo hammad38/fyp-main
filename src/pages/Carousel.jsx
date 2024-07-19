@@ -174,7 +174,8 @@ class CardFb1 extends StatelessWidget {
     <div className="flex flex-col items-center p-8 rounded-lg shadow-lg">
       <div className="mb-4 w-full">
         <span className="block mb-2">Carousel</span>
-        <h1 className="text-2xl font-bold block">Like Carousel Thumbs Up</h1>
+        <h1 className="text-2xl font-bold block">Card Carousel
+        </h1>
       </div>
 
       <div className="flex flex-col md:flex-row justify-between w-full">
@@ -189,7 +190,8 @@ class CardFb1 extends StatelessWidget {
               </div>
             )}
             <div className="flex justify-between items-center mb-2">
-              <span className="text-gray-600">Like Button Thumbs Up</span>
+              <span className="text-gray-600">Card Carousel
+              </span>
               <CopyToClipboard text={code} onCopy={handleCopy}>
                 <button className="flex items-center space-x-1 bg-black-300 px-2 py-1 rounded text-white hover:bg-gray-400 focus:outline-none">
                   <FiCopy />

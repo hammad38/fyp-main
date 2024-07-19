@@ -229,8 +229,8 @@ class MyButton extends StatelessWidget {
   return (
     <div className="flex flex-col items-center p-8 rounded-lg shadow-lg">
       <div className="mb-4 w-full">
-        <span className="block mb-2">Healthy Food</span>
-        <h1 className="text-2xl font-bold block">Food UI</h1>
+        <span className="block mb-2">Calculator</span>
+        <h1 className="text-2xl font-bold block">Calculator UI</h1>
       </div>
 
       <div className="flex flex-col md:flex-row justify-between w-full">
@@ -245,7 +245,7 @@ class MyButton extends StatelessWidget {
               </div>
             )}
             <div className="flex justify-between items-center mb-2">
-              <span className="text-gray-600">Food UI</span>
+              <span className="text-gray-600">Calculator UI</span>
               <CopyToClipboard text={code} onCopy={handleCopy}>
                 <button className="flex items-center space-x-1 bg-black-300 px-2 py-1 rounded text-white hover:bg-gray-400 focus:outline-none">
                   <FiCopy />
