@@ -28,7 +28,10 @@ const CodeEditor = () => {
   return (
     <div className="editor-container">
       {/* Render all images at the top */}
+        <h1 className="section-title">Food UI</h1>
       <div className="images-row">
+
+
         {contentDataFood.map((content) => (
           <ImageComponent key={content.id} src={content.image} />
         ))}
