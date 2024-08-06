@@ -1,0 +1,131 @@
+.editor-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-left: 7rem;
+
+  }
+  
+  .images-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  
+  .image-container {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 8px;
+  }
+  
+  .image {
+    border-radius: 8px;
+    height: 500px;
+  }
+  
+  .description {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  
+  .description-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 32px; */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 32px;
+  }
+  
+  .section-header {
+    width: 100%;
+  }
+  
+  .section-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .section-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: -28px;
+
+    margin-bottom: 28px;
+
+  }
+  
+  .image-column {
+    width: 30%;
+    margin-top: 49px;
+
+  }
+  
+  .code-column {
+    width: 70%;
+    padding-left: 16px;
+    margin-top: 16px;
+  }
+  
+  .relative {
+    position: relative;
+  }
+  
+  .copied-notice {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    background-color: #48bb78;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  
+  .code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .code-title {
+    color: #4a5568;
+  }
+  
+  .copy-button {
+    display: flex;
+    align-items: center;
+    background-color: #2d3748;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .copy-button:hover {
+    background-color: #4a5568;
+  }
+  
+  .code-container {
+    border-radius: 8px;
+    border: 1px solid #4a5568;
+    height: 500px;
+    overflow-y: auto;
+  }
+  

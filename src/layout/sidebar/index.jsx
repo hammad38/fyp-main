@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-import { useRef } from "react";
-import SubMenu from "./SubMenu";
+import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { IoIosArrowBack } from "react-icons/io";
 import { SlSettings } from "react-icons/sl";
@@ -12,11 +10,11 @@ import { RiBuilding3Line } from "react-icons/ri";
 import { useMediaQuery } from "react-responsive";
 import { MdMenu } from "react-icons/md";
 import { NavLink, useLocation } from "react-router-dom";
-import { logo1 } from "../../assets/"
-
+import { logo1 } from "../../assets/";
+import "./Sidebar.css"; // Assuming you have this CSS file
 
 const Sidebar = () => {
-  let isTabletMid = useMediaQuery({ query: "(max-width: 768px)" });
+  const isTabletMid = useMediaQuery({ query: "(max-width: 768px)" });
   const [open, setOpen] = useState(isTabletMid ? false : true);
   const sidebarRef = useRef();
   const { pathname } = useLocation();
@@ -35,36 +33,36 @@ const Sidebar = () => {
 
   const Nav_animation = isTabletMid
     ? {
-      open: {
-        x: 0,
-        width: "16rem",
-        transition: {
-          damping: 40,
+        open: {
+          x: 0,
+          width: "16rem",
+          transition: {
+            damping: 40,
+          },
         },
-      },
-      closed: {
-        x: -250,
-        width: 0,
-        transition: {
-          damping: 40,
-          delay: 0.15,
+        closed: {
+          x: -250,
+          width: 0,
+          transition: {
+            damping: 40,
+            delay: 0.15,
+          },
         },
-      },
-    }
+      }
     : {
-      open: {
-        width: "16rem",
-        transition: {
-          damping: 40,
+        open: {
+          width: "16rem",
+          transition: {
+            damping: 40,
+          },
         },
-      },
-      closed: {
-        width: "4rem",
-        transition: {
-          damping: 40,
+        closed: {
+          width: "4rem",
+          transition: {
+            damping: 40,
+          },
         },
-      },
-    };
+      };
 
   const subMenusList = [
     {
@@ -80,151 +78,113 @@ const Sidebar = () => {
   ];
 
   return (
-    <div>
+    <div className="fixed-sidebar">
       <div
         onClick={() => setOpen(false)}
-        className={`md:hidden fixed inset-0 max-h-screen z-[998] bg-black/50 ${open ? "block" : "hidden"
-          } `}
+        className={`overlay ${open ? "show" : ""}`}
       ></div>
       <motion.div
         ref={sidebarRef}
         variants={Nav_animation}
         initial={{ x: isTabletMid ? -250 : 0 }}
         animate={open ? "open" : "closed"}
-        className="bg-white text-black shadow-xl z-[999] max-w-[16rem] w-[16rem] overflow-hidden md:relative fixed h-screen"
+        className={`sidebar ${isTabletMid ? "md-relative" : ""}`}
       >
-        <div className="flex items-center gap-0.1 font-medium border-b py-3 border-slate-300 mx-3">
-          <NavLink to={"/"} className="link flex items-center pl-3">
-            <img
-              src={logo1}
-              width={50}
-              alt=""
-            />
-            <span className="text-xl whitespace-pre pl-3">Widget World</span>
+        <div className="sidebar-content">
+          <NavLink to={"/"} className="sidebar-logo">
+            <img src={logo1} alt="Widget World" />
+            <span>Widget World</span>
           </NavLink>
         </div>
 
-        <div className="flex flex-col h-full ">
-          <ul className="whitespace-pre px-2.5 text-[0.9rem] py-5 flex flex-col gap-4 font-medium overflow-x-hidden scrollbar-thin scrollbar-track-white scrollbar-thumb-slate-100 md:h-[90%] h-[70%] overflow-y-auto">
+        <div className="sidebar-menu">
+          <ul className="menu-list">
             <li>
-              <small className="pl-3 text-black	inline-block mb-2 font-bold text-lg">
-                Widgets
-              </small>
-              <NavLink to={"appbar"} className="link flex items-center pl-5">
+              <small className="menu-title">Widgets</small>
+              <NavLink to={"appbar"} className="menu-item">
                 <span>Appbar</span>
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to={"card"}
-                className="link flex items-center pl-5"
-              >
-                {/* <BsPerson size={23} className="min-w-max mr-2" /> */}
+              <NavLink to={"card"} className="menu-item">
                 <span>Card</span>
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to={"carousel"}
-                className="link flex items-center pl-5"
-              >
-                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+              <NavLink to={"carousel"} className="menu-item">
                 <span>Carousel</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"dateTime-Picker"} className="link flex items-center pl-5">
-                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+              <NavLink to={"dateTime-Picker"} className="menu-item">
                 <span>DateTime Picker</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"dialog"} className="link flex items-center pl-5">
-                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+              <NavLink to={"dialog"} className="menu-item">
                 <span>Dialog</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"drawer"} className="link flex items-center pl-5">
-                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+              <NavLink to={"drawer"} className="menu-item">
                 <span>Drawer</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"dropdown-menu"} className="link flex items-center pl-5">
-                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+              <NavLink to={"dropdown-menu"} className="menu-item">
                 <span>Dropdown Menu</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"gradient"} className="link flex items-center pl-5">
-                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+              <NavLink to={"gradient"} className="menu-item">
                 <span>Gradient</span>
               </NavLink>
             </li>
             <li>
-              <small className="pl-3 text-black	inline-block mb-2 font-bold text-lg">
-                Screens
-              </small>
-              
-              <NavLink to={"crypto-ui"} className="link flex items-center pl-5">
+              <small className="menu-title">Screens</small>
+              <NavLink to={"crypto-ui"} className="menu-item">
                 <span>Crypto UI</span>
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to={"food-ui"}
-                className="link flex items-center pl-5"
-              >
-                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+              <NavLink to={"food-ui"} className="menu-item">
                 <span>Food UI</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"covid-ui"} className="link flex items-center pl-5">
-                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+              <NavLink to={"covid-ui"} className="menu-item">
                 <span>Covid UI</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"calculator"} className="link flex items-center pl-5">
-                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+              <NavLink to={"calculator"} className="menu-item">
                 <span>Calculator UI</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"quiz"} className="link flex items-center pl-5">
-                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+              <NavLink to={"quiz"} className="menu-item">
                 <span>Quiz UI</span>
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to={"e-commerce-ui"}
-                className="link flex items-center pl-5"
-              >
-                {/* <BsPerson size={23} className="min-w-max mr-2" /> */}
+              <NavLink to={"e-commerce-ui"} className="menu-item">
                 <span>E-commerce UI</span>
               </NavLink>
             </li>
-            
             <li>
-              <NavLink to={"resolution-app"} className="link flex items-center pl-5">
-                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+              <NavLink to={"resolution-app"} className="menu-item">
                 <span>Resolution App</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"online-course"} className="link flex items-center pl-5">
-                {/* <HiOutlineDatabase size={23} className="min-w-max mr-2" /> */}
+              <NavLink to={"online-course"} className="menu-item">
                 <span>Online Course UI</span>
               </NavLink>
             </li>
           </ul>
         </div>
-
       </motion.div>
-      <div className="m-3 md:hidden" onClick={() => setOpen(true)}>
+      <div className={`menu-button ${isTabletMid ? "show" : ""}`} onClick={() => setOpen(true)}>
         <MdMenu size={25} />
       </div>
     </div>
