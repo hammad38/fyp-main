@@ -9,6 +9,7 @@ const ImageComponent = ({ src }) => {
     <div className="flex justify-center items-center h-full">
       <img src={src} alt="Widget Screenshot" className="rounded-md" />
     </div>
+    
   );
 };
 

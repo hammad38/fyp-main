@@ -142,8 +142,8 @@ const Sidebar = () => {
             </li>
             <li>
               <small className="menu-title">Screens</small>
-              <NavLink to={"crypto-ui"} className="menu-item">
-                <span>Crypto UI</span>
+              <NavLink to={"chat-ui"} className="menu-item">
+                <span>Chat App UI</span>
               </NavLink>
             </li>
             <li>
@@ -157,8 +157,8 @@ const Sidebar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to={"calculator"} className="menu-item">
-                <span>Calculator UI</span>
+              <NavLink to={"travel-ui"} className="menu-item">
+                <span>Travel UI</span>
               </NavLink>
             </li>
             <li>
@@ -171,9 +171,15 @@ const Sidebar = () => {
                 <span>E-commerce UI</span>
               </NavLink>
             </li>
+            
             <li>
-              <NavLink to={"resolution-app"} className="menu-item">
-                <span>Resolution App</span>
+              <NavLink to={"online-course"} className="menu-item">
+                <span>Online Course UI</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"online-course"} className="menu-item">
+                <span>Online Course UI</span>
               </NavLink>
             </li>
             <li>
