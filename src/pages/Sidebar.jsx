@@ -5,9 +5,9 @@ import Carousel from "./Carousel";
 import Card from "./Card";
 import Food from "./Food";
 import Covid from "./Covid";
-import Calculator from "./Calculator";
+import Travel from "./Travel";
 import Quiz from "./Quiz";
-import Crypto from "./Crypto";
+import Crypto from "./Chat";
 import Datetimepicker from './Datetimepicker'
 
 
@@ -26,11 +26,11 @@ const Sidebar = () => {
         <Route path="dialog" element={<AllApps />} />
         <Route path="drawer" element={<AllApps />} />
         <Route path="dropdown-menu" element={<AllApps />} />
-        <Route path="crypto-ui" element={<Crypto />} />
+        <Route path="chat-ui" element={<Crypto />} />
         <Route path="e-commerce-ui" element={<AllApps />} />
         <Route path="food-ui" element={<Food />} />
         <Route path="covid-ui" element={<Covid />} />
-        <Route path="calculator" element={<Calculator />} />
+        <Route path="travel-ui" element={<Travel />} />
         <Route path="quiz" element={<Quiz />} />
         <Route path="resolution-app" element={<AllApps />} />
         <Route path="online-course" element={<AllApps />} />
