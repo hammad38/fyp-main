@@ -3,9 +3,9 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { hopscotch } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
-import "./CodeEditor.css";
+import "../pages/CodeEditor.css";
 
-const AppBarWidgets = () => {
+const WidgetCategory = ({ category, categoryName }) => {
   const [widgets, setWidgets] = useState([]);
   const [copied, setCopied] = useState(false);
   const [copiedId, setCopiedId] = useState(null);
@@ -14,13 +14,13 @@ const AppBarWidgets = () => {
     fetch("https://nodejs-fyp-production.up.railway.app/approvedwidgets")
       .then((response) => response.json())
       .then((data) => {
-        const appBarWidgets = data.filter(
-          (widget) => widget.approved && widget.category === "appBar"
+        const filteredWidgets = data.filter(
+          (widget) => widget.approved && widget.category === category
         );
-        setWidgets(appBarWidgets);
+        setWidgets(filteredWidgets);
       })
       .catch((error) => console.error("Error fetching widgets:", error));
-  }, []);
+  }, [category]);
 
   const handleCopy = (id) => {
     setCopied(true);
@@ -33,6 +33,8 @@ const AppBarWidgets = () => {
 
   return (
     <div className="editor-container">
+      <h1 className="section-title">{categoryName}</h1>
+      {widgets.length === 0 && <p>Loading widgets, please wait...</p>}
       {widgets.map((widget) => (
         <div key={widget._id} className="section">
           <div className="section-header">
@@ -83,4 +85,4 @@ const AppBarWidgets = () => {
   );
 };
 
-export default AppBarWidgets;
+export default WidgetCategory;

@@ -12,6 +12,7 @@ import { MdMenu } from "react-icons/md";
 import { NavLink, useLocation } from "react-router-dom";
 import { logo1 } from "../../assets/";
 import "./Sidebar.css"; // Assuming you have this CSS file
+import WidgetCategory from "../../widgets/WidgetCategory";
 
 const Sidebar = () => {
   const isTabletMid = useMediaQuery({ query: "(max-width: 768px)" });
@@ -99,47 +100,114 @@ const Sidebar = () => {
 
         <div className="sidebar-menu">
           <ul className="menu-list">
+            <small className="menu-title">Widgets</small>
             <li>
-              <small className="menu-title">Widgets</small>
-              <NavLink to={"appbar"} className="menu-item">
+              <NavLink to="appbar" className="menu-item">
                 <span>Appbar</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"card"} className="menu-item">
+              <NavLink to="bottomsheet" className="menu-item">
+                <span>Bottom Sheet</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="button" className="menu-item">
+                <span>Button</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="card" className="menu-item">
                 <span>Card</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"carousel"} className="menu-item">
+              <NavLink to="carousel" className="menu-item">
                 <span>Carousel</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"dateTime-Picker"} className="menu-item">
-                <span>DateTime Picker</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={"dialog"} className="menu-item">
+              <NavLink to="dialog" className="menu-item">
                 <span>Dialog</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"drawer"} className="menu-item">
+              <NavLink to="drawer" className="menu-item">
                 <span>Drawer</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"dropdown-menu"} className="menu-item">
-                <span>Dropdown Menu</span>
+              <NavLink to="dropdown" className="menu-item">
+                <span>Dropdown</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to={"gradient"} className="menu-item">
-                <span>Gradient</span>
+              <NavLink to="expansiontile" className="menu-item">
+                <span>Expansion Tile</span>
               </NavLink>
             </li>
+            <li>
+              <NavLink to="listtile" className="menu-item">
+                <span>List Tile</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="listview" className="menu-item">
+                <span>List View</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="loadingindicator" className="menu-item">
+                <span>Loading Indicator</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="mixed" className="menu-item">
+                <span>Mixed</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="navbar" className="menu-item">
+                <span>Navigation Bar</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="neumorphic" className="menu-item">
+                <span>Neumorphic</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="searchbar" className="menu-item">
+                <span>Search Bar</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="sliders" className="menu-item">
+                <span>Sliders</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="snackbars" className="menu-item">
+                <span>Snackbars</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="socialbuttons" className="menu-item">
+                <span>Social Buttons</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="inputfields" className="menu-item">
+                <span>Input Fields</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="animations" className="menu-item">
+                <span>Animations</span>
+              </NavLink>
+            </li>
+          </ul>
+          <ul className="menu-list">
             <li>
               <small className="menu-title">Screens</small>
               <NavLink to={"chat-ui"} className="menu-item">
@@ -171,7 +239,7 @@ const Sidebar = () => {
                 <span>E-commerce UI</span>
               </NavLink>
             </li>
-            
+
             <li>
               <NavLink to={"online-course"} className="menu-item">
                 <span>Online Course UI</span>
@@ -190,7 +258,10 @@ const Sidebar = () => {
           </ul>
         </div>
       </motion.div>
-      <div className={`menu-button ${isTabletMid ? "show" : ""}`} onClick={() => setOpen(true)}>
+      <div
+        className={`menu-button ${isTabletMid ? "show" : ""}`}
+        onClick={() => setOpen(true)}
+      >
         <MdMenu size={25} />
       </div>
     </div>
